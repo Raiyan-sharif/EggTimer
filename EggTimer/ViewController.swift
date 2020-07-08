@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ViewController: UIViewController {
     
-    let eggTimes = ["Soft": 300, "Medium": 4, "Hard":7]
+    let eggTimes = ["Soft": 300, "Medium": 420, "Hard":720]
 
     @IBOutlet weak var titlleLabel: UILabel!
     
@@ -51,6 +53,10 @@ class ViewController: UIViewController {
             timer.invalidate()
             progressBar.progress = 1.0
             titlleLabel.text = "Done"
+            let systemSoundID: SystemSoundID = 1016
+
+            // to play sound
+            AudioServicesPlaySystemSound (systemSoundID)
             
             
             
